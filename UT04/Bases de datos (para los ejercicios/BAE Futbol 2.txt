@@ -1,0 +1,37 @@
+-- Crea la BD futbol2 y úsala
+-- CREATE DATABASE futbol2;
+
+
+CREATE TABLE equipos(
+    id_equipo smallint primary key,
+    nombre varchar(50),
+    estadio varchar(50),
+    aforo int,
+    fundado smallint,
+    ciudad varchar(50) NULL
+);
+
+
+CREATE TABLE jugadores(
+    id_jugador int primary key,
+    nombreJ varchar(50),
+    fecha_nac date,
+    demarcacion varchar(50),
+    internacional smallint,
+    id_equipo smallint,
+    FOREIGN KEY (id_equipo) REFERENCES equipos(id_equipo)
+);
+
+INSERT INTO equipos (id_equipo , nombre, estadio, aforo, fundado, ciudad) VALUES
+(1, 'Real Madrid', 'Santiago Bernabeu', 80000, 1950, 'Madrid'),
+(2, 'F.C. Barcelona', 'Camp Nou', 70000, 1948, 'Barcelona'),
+(3, 'Valencia C.F', 'Mestalla', 60000, 1952, 'Valencia'),
+(4, 'Atlético de Madrid', 'Vicente Calderón', 55000, 1945, 'Madrid');
+
+INSERT INTO  jugadores (id_jugador, nombreJ, fecha_nac, demarcacion , internacional, id_equipo) VALUES 
+(1, 'Iker Casillas', '1980/5/6', 'Portero', 50, '1'),
+(2, 'Ronaldo', '1974/7/7', 'Delantero', 80, '1'),
+(3, 'Zidedine Zidane', '1968/6/6', 'Centrocampista', 75, '1'),
+(4, 'Samuel Etoo', '1966/3/3', 'Delantero', 50, '2'),
+(5, 'Baraja', '1965/5/5', 'Centrocampista', 40, '3'),
+(6, 'HugoPR', '1999/9/9', 'Delantero',0,NULL  );

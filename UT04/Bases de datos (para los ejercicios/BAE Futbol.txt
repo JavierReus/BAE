@@ -1,0 +1,42 @@
+- Crea la BD futbol y úsala
+-- CREATE DATABASE futbol;
+
+
+
+
+CREATE TABLE jugadores(
+id_jugador SMALLINT,
+nombre varchar(50),
+fecha_nac date,
+demarcacion varchar(50),
+internacional SMALLINT,
+equipo varchar(50)
+);
+
+CREATE TABLE equipos(
+id_equipo SMALLINT,
+nombre varchar(50),
+estadio varchar(50),
+aforo SMALLINT,
+ano_fundacion SMALLINT,
+ciudad varchar(50)
+);
+
+INSERT INTO equipos (id_equipo , nombre, estadio, aforo, ano_fundacion, ciudad) VALUES
+(1, 'Real Madrid', 'Santiago Bernabeu', 8000, 1950, 'Madrid'),
+(2, 'F.C. Barcelona', 'Camp Nou', 7000, 1948, 'Barcelona'),
+(3, 'Valencia C.F', 'Mestalla', 6000, 1952, 'Valencia'),
+(4, 'Atlético de Madrid', 'Vicente Calderón', 5500, 1945, 'Madrid');
+
+INSERT INTO  jugadores (id_jugador, nombre, fecha_nac, demarcacion , internacional, equipo) VALUES 
+(1, 'Iker Casillas', '1980/5/6', 'Portero', 50, 'Real Madrid'),
+(2, 'Ronaldo', '1974/7/7', 'Delantero', 80, 'Real Madrid'),
+(3, 'Zidedine Zidane', '1968/6/6', 'Centrocampista', 75, 'Real Madrid'),
+(4, 'Samuel Etoo', '1966/3/3', 'Delantero', 50, 'F.C. Barcelona'),
+(5, 'Ronaldinho', '1979/5/5', 'Centrocampista', 45, 'F.C. Barcelona'),
+(6, 'Deco', '1976/3/3', 'Centrocampista', 25, 'F.C. Barcelona'),
+(7, 'Baraja', '1965/5/5', 'Centrocampista', 40, 'Valencia'),
+(8, 'Albelda', '1973/3/3', 'Centrocampista', 40, 'Valencia'),
+(9, 'Aimar', '1975/5/5', 'Centrocampista', 35, 'Valencia'),
+(10, 'Vicente', '1976/6/5', 'Centrocampista', 20, 'Valencia');
+
